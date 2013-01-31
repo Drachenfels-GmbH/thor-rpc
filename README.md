@@ -1,27 +1,23 @@
 # Thor::Rpc
 
-Thor::RPC generates RPC endpoints using [rack-rpc](https://github.com/datagraph/rack-rpc) for
-[thor](https://github.com/wycats/thor) files.
+Thor::RPC generates RPC endpoints for executing [thor](https://github.com/wycats/thor) tasks.
+It uses [rack-rpc](https://github.com/datagraph/rack-rpc) to generate the RPC endpoints.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'thor-rpc'
+    gem "thor-rpc", :git => "git://github.com/drachenfels-gmbh/thor-rpc.git"
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install thor-rpc
-
 ## Usage
 
-Please have a look at the [config.ru](example/config.ru) the example folder.
+Please have a look at the [config.ru](example/config.ru) in the example folder.
 
-Thor::RPC and the thor files to use have to be loaded in the *config.ru*:
+Thor::RPC and the thor files have to be loaded in the *config.ru*:
 <pre>
 require 'thor-rpc'
 load 'simple.thor'
@@ -36,7 +32,9 @@ Thor::RPC::SERVERS.each_pair do |key, server|
 end
 </pre>
 
-The endpoint can easily be tested with *curl* see [test.sh](example/test.sh).
+Currently there are no specs and unit tests, because it was just a simple prove of concept.
+But you can test the code by running *rackup* in the example directory
+and execute the [curl test script](example/test.sh) afterwards.
 
 ## Contributing
 
@@ -48,8 +46,10 @@ The endpoint can easily be tested with *curl* see [test.sh](example/test.sh).
 
 ## TODO
 
-* support method parameters
-* add warning when defining method more than once
-* add API browsing page
-* generate client stubs
+* tests, tests, tests
+* concept for providing thor method options
+* better logging
+* warn when a method is registered more than once
+* API browsing page similar to thor commandline help
+* client stubs
 

@@ -19,7 +19,6 @@ class Thor
 
       def get_server(name)
         SERVERS[name]
-        #const_get(name)
       end
 
       def register_server(task_clazz)

@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Thor::RPC::VERSION
   gem.authors       = ["Ruben Jenster"]
   gem.email         = ["r.jenster@drachenfels.de"]
-  gem.description   = %q{Dynamic RPC endpoint generation for thor class definitions.}
-  gem.summary       = %q{Dynamic RPC endpoint generation for thor class definitions.}
-  gem.homepage      = ""
+  gem.description   = %q{Dynamic RPC endpoint generation for thor tasks.}
+  gem.summary       = %q{Dynamic RPC endpoint generation for thor tasks.}
+  gem.homepage      = "git://github.com/drachenfels-gmbh/thor-rpc.git"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
